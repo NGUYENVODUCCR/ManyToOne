@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Company List</title>
+</head>
+<body>
+<h1>COMPANY LIST</h1>
+<a href="/companies/add">Add new company 0o0</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Company Name</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="company : ${companies}">
+        <td th:text="${company.id}"></td>
+        <td th:text="${company.companyName}"></td>
+        <td>
+            <a th:href="@{/companies/edit/{id}(id=${company.id})}">Sửa</a> |
+            <a th:href="@{/companies/delete/{id}(id=${company.id})}" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">Xóa</a> |
+            <a th:href="@{/companies/{id}/users(id=${company.id})}">Xem danh sách</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

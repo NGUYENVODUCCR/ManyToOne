@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ADD A NEW USER</title>
+</head>
+<body>
+<h1>Add User to Company</h1>
+<form action="#" th:action="@{/users/add}" th:object="${user}" method="post">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" th:field="*{firstName}" /><br />
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" th:field="*{lastName}" /><br />
+
+    <label for="companyId">Company:</label>
+    <select id="companyId" name="companyId" th:field="*{company.id}">
+        <option th:each="company : ${companies}" th:value="${company.id}" th:text="${company.companyName}"></option>
+    </select><br />
+
+    <button type="submit">Add User</button>
+</form>
+</body>
+</html>

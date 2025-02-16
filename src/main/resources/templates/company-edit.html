@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>EDIT COMPANY</title>
+</head>
+<body>
+<h1>Edit Company</h1>
+<form th:action="@{/companies/edit/{id}(id=${company.id})}" method="post">
+    <label for="companyName">Name Company:</label>
+    <input type="text" id="companyName" name="companyName" th:value="${company.companyName}" required>
+    <br><br>
+    <button type="submit">Update</button>
+</form>
+<br>
+<a href="/companies">Comeback List</a>
+</body>
+</html>

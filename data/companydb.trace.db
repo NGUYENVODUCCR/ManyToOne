@@ -1,0 +1,3 @@
+2025-02-16 14:37:00.954604+07:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]company_id, nullable = false"; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT"; SQL statement:
+company_id, nullable = false [42001-232]
